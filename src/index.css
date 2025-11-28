@@ -11,4 +11,30 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+
+  /* VARIABLES DE COLORES - Copiar de aqui para bajo si es necesario */
+
+  /* === HIGHLIGHT (NARANJAS) — oscuro → claro === */
+  --c-high-1: #A15300; /* Chocolate Brown */
+  --c-high-2: #C18400; /* Burnt Caramel */
+  --c-high-3: #F88000; /* Princeton Orange */
+  --c-high-4: #FF9F29; /* Amber Glow */
+  --c-high-5: #FFB254; /* Orange */
+  --c-high-6: #FEC581; /* Apricot Cream */
+  --c-high-7: #FFDAAD; /* Apricot Cream (más claro) */
+
+  /* === NORMAL (AZULES/VERDES) — oscuro → claro === */
+  --c-norm-1: #001F1A; /* Evergreen (más oscuro) */
+  --c-norm-2: #00382F; /* Evergreen */
+  --c-norm-3: #004E44; /* Pine Teal */
+  --c-norm-4: #007D6D; /* Blue Spruce */
+  --c-norm-5: #00A48E; /* Verdigris */
+  --c-norm-6: #34BCAA; /* Ocean Mist */
+  --c-norm-7: #56D3C3; /* Turquoise */
+  --c-norm-8: #79DDD0; /* Pearl Aqua */
+  --c-norm-9: #9DF2E6; /* Soft Cyan */
+  --c-norm-10: #B5FEF4; /* Icy Aqua */
+  --c-norm-11: #E9FEFB; /* Azure Mist */
 }
