@@ -26,3 +26,6 @@ dist-ssr
 # Shared Proyect
 main.jsx
 App.jsx
+
+index.css
+App.css
