@@ -22,12 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Shared Proyect
-index.html
-
-src/main.jsx
-src/App.jsx
-
-src/index.css
-src/App.css
