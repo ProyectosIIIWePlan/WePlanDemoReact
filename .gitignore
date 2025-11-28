@@ -24,8 +24,10 @@ dist-ssr
 *.sw?
 
 # Shared Proyect
-main.jsx
-App.jsx
+index.html
 
-index.css
-App.css
+src/main.jsx
+src/App.jsx
+
+src/index.css
+src/App.css
