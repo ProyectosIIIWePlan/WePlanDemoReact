@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import './App.css'
-
-import Page from './components/Nombre_Pagina_Aqui.jsx'
+import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import CrearGrupo from './Components/GrupoManager'; // Página para crear grupos
+import GestionGrupo from './Components/GestionMiembros'; // Página para gestionar un grupo
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <Page />
-    </>
-  )
+    <div>
+      <Routes>
+        {/* Página de creación de grupos */}
+        <Route path="/" element={<CrearGrupo />} />
+
+        {/* Página de gestión de un grupo específico */}
+        <Route path="/grupo/:grupoId" element={<GestionGrupo />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
+

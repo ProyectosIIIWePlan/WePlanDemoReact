@@ -1,0 +1,255 @@
+/* ===== GrupoManager.css ===== */
+
+/* Contenedor principal (PC first) */
+.gm-page {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 32px 32px 48px;
+  box-sizing: border-box;
+  background-color: var(--c-norm-10);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-align: left;
+  overflow-y: auto;
+}
+
+/* Títulos */
+.gm-header {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--c-norm-2);
+  margin-bottom: 24px;
+}
+
+.gm-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--c-norm-4);
+  margin: 8px 0 12px;
+}
+
+/* Input + botón crear */
+.gm-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.gm-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  outline: none;
+}
+
+.gm-input::placeholder {
+  color: var(--c-norm-5);
+}
+
+.gm-add-btn {
+  padding: 0 18px;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--c-norm-5);
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Lista de tarjetas */
+.gm-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+/* Tarjeta de grupo */
+.gm-card {
+  background-color: var(--c-norm-8);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gm-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gm-card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-norm-3);
+}
+
+.gm-card-count {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--c-norm-4);
+}
+
+/* Botón "Ver" dentro de la tarjeta */
+.gm-btn-ver {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--c-norm-5);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Mensaje vacío */
+.gm-empty {
+  font-size: 0.9rem;
+  color: var(--c-norm-4);
+}
+
+/* Botón grande "Nuevo grupo" abajo */
+.gm-btn-nuevo {
+  width: 260px;
+  max-width: 100%;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--c-norm-3);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Feedback al pulsar */
+.gm-page button:active {
+  transform: scale(0.97);
+}
+
+/* ===== Responsive (móvil) ===== */
+
+@media (max-width: 600px) {
+  .gm-page {
+    max-width: 430px;
+    padding: 16px 16px 32px;
+  }
+
+  .gm-header {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+
+  .gm-card {
+    padding: 14px 16px;
+    align-items: flex-start;
+  }
+
+  .gm-card-name {
+    font-size: 1rem;
+  }
+
+  .gm-card-sub {
+    font-size: 0.8rem;
+  }
+
+  .gm-card-count {
+    font-size: 1.4rem;
+  }
+
+  .gm-btn-ver {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+
+  .gm-btn-nuevo {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
+/* Panel de creación de grupo desplegable */
+.gm-create-panel {
+  margin-top: 16px;
+  padding: 18px 20px 22px;
+  border-radius: 18px;
+  background-color: var(--c-norm-9);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.gm-create-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-norm-2);
+  margin-bottom: 12px;
+}
+
+/* Fila para el nombre del viaje */
+.gm-create-row {
+  margin-bottom: 12px;
+}
+
+/* Lista de miembros (pills) */
+.gm-members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.gm-member-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: var(--c-norm-8);
+  color: var(--c-norm-3);
+  font-size: 0.85rem;
+}
+
+.gm-member-remove {
+  border: none;
+  background: var(--c-high-3);
+  color: #fff;
+  border-radius: 999px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fila para añadir integrante */
+.gm-members-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* Botón final "Crear viaje" dentro del panel */
+.gm-create-btn {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--c-norm-3);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
