@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--c-norm-10);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -37,4 +37,5 @@
   --c-norm-9: #9DF2E6; /* Soft Cyan */
   --c-norm-10: #B5FEF4; /* Icy Aqua */
   --c-norm-11: #E9FEFB; /* Azure Mist */
+   --c-norm-12: #7fd1c9;
 }

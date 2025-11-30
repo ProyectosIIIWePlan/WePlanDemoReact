@@ -1,16 +1,25 @@
-import { useState } from 'react'
+
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
 
-import Page from './components/Nombre_Pagina_Aqui.jsx'
+import CrearGrupo from './Components/GrupoManager';
+import GestionGrupo from './Components/GestionMiembros';
+import Gestion from './components/Mario/Gestion.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  // Victor <ListaGestiones />
   return (
     <>
-      <Page />
+        <Routes>
+
+            <Route path="/" element={<CrearGrupo />} />
+            <Route path="/grupo/:grupoId" element={<GestionGrupo />} />
+            <Route path="/gestion" element={<Gestion payTotal={1000} nPersonas={8} admin={false} isTrip={true} />} />
+            
+        </Routes>
     </>
   )
 }
 
-export default App
+export default App;

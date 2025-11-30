@@ -1,0 +1,94 @@
+#moneyPool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+    height: min-content;
+}
+
+/* CÍRCULO DE PROGRESO */
+#progress-circle {
+    width: 40vh;
+    height: 40vh;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+#progress-circle svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+#progress-circle circle {
+    fill: none;
+    stroke-width: 5vh;
+    r: 40%;
+    cx: 50%;
+    cy: 50%;
+}
+
+#progress-circle .bg {
+    stroke: var(--c-norm-4);
+    stroke-width: 4.9vh;
+}
+
+#progress-circle .progress {
+    stroke: var(--c-norm-7);
+    stroke-linecap: round;
+    stroke-dasharray: calc(2 * 3.1415 * 40%);
+    transition: stroke-dashoffset 1s ease;
+}
+
+#percentage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#percentage p {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+
+    color: var(--c-norm-4);
+}
+
+/* PAY STATUS */
+#payStatus {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#payStatus h2 {
+    margin: 0;
+}
+
+.inline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media (max-width: 100vh) {
+    #progress-circle {
+        width: 40vw;
+        height: 40vw;
+    }
+    #progress-circle circle {
+        stroke-width: 5vw;
+    }
+}
+
+@media (max-width: 670px) {
+    #progress-circle{
+        width: 75vw;
+        height: 75vw;
+    }
+    #progress-circle circle {
+         stroke-width: 10vw;
+    }
+}

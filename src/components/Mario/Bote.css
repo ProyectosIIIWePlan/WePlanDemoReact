@@ -1,0 +1,133 @@
+#m-bote{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 2vh 2vh 0 2vh;
+}
+
+#m-bote .title{
+    margin: 2vh 0 0;
+    width: 100%;
+
+    font-size: 2.5vh;
+    font-weight: bold;
+    text-align: left;
+    color: var(--c-norm-4);
+}
+
+.title.underline{
+    border-bottom: 0.2vh solid var(--c-norm-4);
+}
+
+/* BOTE CONTENT */
+#m-potCard {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+
+.m-potCardContent{
+    position:relative;
+    background-color: var(--c-norm-7);
+    border: 0.2vh solid var(--c-norm-4);
+    border-radius: 10px;
+    margin-top: 2vh;
+    width: 400px;
+    height: 200px;
+
+    color: var(--c-norm-4);
+}
+
+.m-potCardNumber{
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    margin:0;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 1.5em;
+}
+.m-potCardName{
+    position: absolute;
+    top: 150px;
+    width: calc(100% - 40px);
+    margin:0 0 0 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 1.5em;
+    text-align: left;
+
+}
+.m-potCardExpire{
+    position: absolute;
+    top: 168px;
+    width: calc(100% - 40px);
+    margin: 0 0 0 20px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: .8em;
+    text-align: right;
+    color: var(--c-norm-11);
+}
+
+/* BOTE ACTIONS */
+#m-potHistory{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2vh;
+    gap: 1vh;
+}
+
+.m-potHistoryEntry{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 0;
+    background-color: var(--c-norm-7);
+    border: 0.2vh solid var(--c-norm-4);
+    border-radius: 8px;
+    gap: 40px;
+    color: var(--c-norm-4);
+}
+.m-potHistoryEntry > div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.m-potHistoryEntry > div:nth-of-type(1){
+    margin-left: 20px;
+    width: 120px;
+}
+.m-potHistoryEntry > div:nth-of-type(2){
+    margin-right: 20px;
+    width: calc(100% - 120px - 80px);
+}
+.m-potHistoryEntry > div:nth-of-type(2):before{
+    content: "";
+    position: absolute;
+    height: 110%;
+    margin-top: 1px;
+    border-right: solid 3px var(--c-norm-4);
+    left: -20px;
+    border-radius: 20px;
+    min-height: 52.8px;
+}
+
+.m-potHistoryDate{
+    text-align: center;
+}
+.m-potHistoryAmount{
+    text-align: center;
+}
+.m-potHistoryDescription{
+    text-align: center;
+}

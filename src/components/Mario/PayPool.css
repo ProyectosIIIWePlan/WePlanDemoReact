@@ -1,0 +1,85 @@
+#m-payPool{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px
+}
+
+#m-pay{
+    width: 40vh;
+    height: 40vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#m-pay > h2{
+    color: var(--c-high-3);
+}
+
+#m-pay > button{
+    width: 100%;
+    font-size: 1em;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#m-pay > button{
+    color: var(--c-norm-4);
+    background-color: var(--c-norm-7);
+    border: 2px solid var(--c-norm-4);
+}
+#m-pay > button:nth-of-type(1){
+    color: var(--c-high-1);
+    background-color: var(--c-high-4);
+    border: 2px solid var(--c-high-1);
+}
+#m-pay > button:nth-of-type(2){
+    display: none;
+}
+
+#m-pay > button:hover{
+    background-color: var(--c-norm-4);
+    color: var(--c-norm-7);
+    cursor: pointer;
+}
+#m-pay > button:nth-of-type(1):hover{
+    background-color: var(--c-high-1);
+    color: var(--c-high-4);
+    cursor: pointer;
+}
+
+#m-pay > button:disabled{
+    opacity: 0;
+    cursor: default;
+}
+#m-pay > button:nth-of-type(1):disabled{
+    opacity: 1;
+    background-color: var(--c-norm-4);
+    color: var(--c-norm-2);
+    border: 2px solid var(--c-norm-2);
+    cursor: not-allowed;
+}
+
+@media (max-width: 100vh) {
+    #m-pay{
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+@media (max-width: 670px) {
+    #m-payPool{
+        flex-direction: column;
+    }
+
+    #m-pay{
+
+        width: 75vw;
+        height: 75vw;
+    }
+}
