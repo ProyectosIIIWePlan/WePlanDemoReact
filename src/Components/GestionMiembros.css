@@ -1,0 +1,215 @@
+/* ==============
+   GestionMiembros.css
+   ============== */
+
+.gestion-grupo {
+  position: fixed;             
+  inset: 0;                     
+  width: 100vw;
+  min-height: 100vh;
+  padding: 32px 32px 48px;
+  box-sizing: border-box;
+  background-color: var(--c-norm-10);  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-align: left;
+  overflow-y: auto;             
+}
+
+
+/* TÍTULOS */
+.gg-titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #165a5a;
+  margin: 8px 4px 4px;
+}
+
+.gg-subtitulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--c-norm-2);
+  margin: 16px 4px 10px;
+}
+
+/* LISTA DE MIEMBROS (TARJETAS) */
+.miembros {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.miembro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background-color:var(--c-norm-11);;
+  border-radius: 16px;
+  color: #0c3d3c;
+  font-size: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* BOTÓN DE BORRAR (x) */
+.eliminar-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #ff5c5c;
+  color: #ffffff;
+}
+
+/* BLOQUE PARA AÑADIR MIEMBRO */
+.agregar-miembro {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 28px;
+}
+
+.agregar-miembro input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  outline: none;
+}
+
+.agregar-miembro input::placeholder {
+  color: #7ba3a3;
+}
+
+/* BOTÓN + REDONDO */
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #10a57d;
+  color: #ffffff;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* BOTONES INFERIORES */
+.gg-botones {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.btn-danger,
+.btn-secondary {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ELIMINAR VIAJE */
+.btn-danger {
+  background-color: #ff6b6b;
+  color: #ffffff;
+}
+
+/* VOLVER A GRUPOS */
+.btn-secondary {
+  background-color: var(--c-norm-2);;
+  color: #ffffff;
+}
+
+/* FEEDBACK AL PULSAR */
+.gestion-grupo button:active {
+  transform: scale(0.97);
+}
+
+/* ==============
+   RESPONSIVE (MÓVIL)
+   ============== */
+@media (max-width: 600px) {
+  .gestion-grupo {
+    padding: 16px 16px 32px;
+  }
+}
+
+
+  .gg-titulo {
+    font-size: 1.3rem;
+  }
+
+  .gg-subtitulo {
+    font-size: 1rem;
+  }
+
+  .miembro {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .agregar-miembro {
+    gap: 8px;
+  }
+
+  .btn-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .gg-botones {
+    flex-direction: column;
+  }
+
+  .btn-danger,
+  .btn-secondary {
+    width: 100%;
+  }
+/* NAVBAR SUPERIOR */
+.gm-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: var(--c-norm-10);
+  padding: 14px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid #508079;
+}
+
+/* Botón ← volver */
+.gm-back-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #165a5a;
+  font-weight: 700;
+}
+
+.gm-back-btn:active {
+  transform: scale(0.92);
+}
+
+/* Título de la navbar */
+.gm-navbar-title {
+  font-size: 1.1rem;
+  color: var(--c-norm-2);
+  font-weight: 700;
+}
+.gm-content {
+  padding-top: 12px; /* separa del navbar */
+}
+
