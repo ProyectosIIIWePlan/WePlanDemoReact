@@ -1,105 +1,129 @@
 // src/components/Victor/GestionCard.jsx
+import "./ListaGestiones.css";
 
-function GestionCard({ gestion, onEditar, onPagos }) {
-  const esViaje = gestion.tipo === "viaje";
+function GestionCard({ gestion, onEditar, onPagos, onEliminar }) {
+  // Extraemos datos principales
+  const {
+    id,
+    tipo = "viaje",
+    nombre,
+    hoteles = [],
+    transportes = [],
+    participantes = [],
+    participantesTotales
+  } = gestion;
 
-  const participantes = gestion.participantes || [];
-  const totalPersonas =
-    participantes.length || gestion.participantesTotales || 0;
-
+  // Total según tipo
   const total =
-    esViaje ? Number(gestion.costeTotal || 0) : Number(gestion.cantidadTotal || 0);
+    tipo === "viaje"
+      ? Number(gestion.costeTotal || 0)
+      : Number(gestion.cantidadTotal || 0);
 
-  const pagados = participantes.filter((p) => p.haPagado).length;
-  const totalPagado = participantes.reduce(
-    (acc, p) => acc + (p.haPagado ? p.debePagar : 0),
+  // Pagado por participantes
+  const pagado = participantes.reduce(
+    (acc, p) => acc + (p.haPagado ? Number(p.debePagar) : 0),
     0
   );
-  const restante = Math.max(total - totalPagado, 0);
 
-  let estadoClass = "";
-  if (total > 0 && totalPersonas > 0) {
-    if (restante <= 0) {
-      estadoClass = "gestion-card-completa";
-    } else if (pagados > 0) {
-      estadoClass = "gestion-card-parcial";
-    } else {
-      estadoClass = "gestion-card-pendiente";
-    }
+  const restante = Math.max(total - pagado, 0);
+  const numParticipantes = participantesTotales ?? participantes.length;
+
+  // Estado visual
+  let estado = "pendiente";
+  if (total > 0) {
+    if (pagado >= total) estado = "completa";
+    else if (pagado > 0) estado = "parcial";
   }
 
   return (
-    <article className={`gestion-card card-anim ${estadoClass}`}>
+    <div className={`gestion-card gestion-card-${estado} card-anim`}>
+
+      {/* HEADER */}
       <div className="gestion-card-header">
-        <h3 className="gestion-titulo">{gestion.nombre}</h3>
+        <h3 className="gestion-titulo">{nombre}</h3>
 
         <span
           className={`gestion-tipo ${
-            esViaje ? "badge-viaje" : "badge-bote"
+            tipo === "viaje" ? "badge-viaje" : "badge-bote"
           }`}
         >
-          {esViaje ? "Viaje" : "Bote"}
+          {tipo === "viaje" ? "Viaje" : "Bote"}
         </span>
       </div>
 
+      {/* INFORMACIÓN PRINCIPAL */}
       <div className="gestion-detalles-viaje">
-        {esViaje ? (
-          <>
-            <p>
-              <span className="detalle-label">Hotel:</span>{" "}
-              {gestion.hotel || "Sin especificar"}
-            </p>
-            <p>
-              <span className="detalle-label">Transporte:</span>{" "}
-              {gestion.transporte || "Sin especificar"}
-            </p>
-            <p>
-              <span className="detalle-label">Coste total:</span>{" "}
-              <span className="detalle-cantidad">{total} €</span>
-            </p>
-          </>
-        ) : (
-          <p>
-            <span className="detalle-label">Cantidad total:</span>{" "}
-            <span className="detalle-cantidad">{total} €</span>
-          </p>
+        <span>
+          <span className="detalle-label">Total:</span> {total.toFixed(2)} €
+        </span>
+
+        <span>
+          <span className="detalle-label">Pagado:</span> {pagado.toFixed(2)} €
+        </span>
+
+        {total > 0 && (
+          <span>
+            <span className="detalle-label">Restante:</span> {restante.toFixed(2)} €
+          </span>
         )}
 
-        {totalPersonas > 0 && (
-          <>
-            <p>
-              <span className="detalle-label">Pagado:</span>{" "}
-              {pagados} / {totalPersonas} personas
-            </p>
-            {total > 0 && (
-              <p>
-                <span className="detalle-label">Restante:</span>{" "}
-                <span className="detalle-cantidad">
-                  {restante.toFixed(2)} €
-                </span>
-              </p>
-            )}
-          </>
-        )}
+        <span className="detalle-extra">
+          {numParticipantes} participantes
+        </span>
       </div>
 
+      {/* SECCIÓN DE HOTELES */}
+      {tipo === "viaje" && hoteles.length > 0 && (
+        <div className="gestion-detalles-viaje">
+          <span className="detalle-label">Hoteles:</span>
+
+          {hoteles.map((h) => (
+            <span key={h.id} className="detalle-extra">
+              • {h.nombre || "Hotel sin nombre"} — {h.entrada} → {h.salida}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* SECCIÓN DE TRANSPORTES */}
+      {tipo === "viaje" && transportes.length > 0 && (
+        <div className="gestion-detalles-viaje">
+          <span className="detalle-label">Transportes:</span>
+
+          {transportes.map((t) => (
+            <span key={t.id} className="detalle-extra">
+              • {t.tipo || "Transporte"} — {t.fecha}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* BOTONES */}
       <div className="gestion-botones">
         <button
+          className="gestion-boton-acceder"
+          onClick={() => onPagos(gestion)}
+        >
+          Pagos
+        </button>
+
+        <button
           className="gestion-boton-secundario"
-          type="button"
           onClick={() => onEditar(gestion)}
         >
           Editar
         </button>
-        <button
-          className="gestion-boton-acceder"
-          type="button"
-          onClick={() => onPagos(gestion)}
-        >
-          Gestionar pagos
-        </button>
+
+        {onEliminar && (
+          <button
+            className="gestion-boton-eliminar"
+            onClick={() => onEliminar(id)}
+          >
+            Eliminar
+          </button>
+        )}
       </div>
-    </article>
+    </div>
   );
 }
 

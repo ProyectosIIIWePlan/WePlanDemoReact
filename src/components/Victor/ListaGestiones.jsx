@@ -38,6 +38,14 @@ function ListaGestiones() {
     );
   };
 
+  // NUEVO: ELIMINAR UNA GESTIÓN
+  const handleEliminarGestion = (id) => {
+    const confirmar = window.confirm("¿Seguro que quieres eliminar esta gestión?");
+    if (!confirmar) return;
+
+    setGestiones((prev) => prev.filter((g) => g.id !== id));
+  };
+
   return (
     <div className="lista-gestiones-page">
       <NavbarGestiones />
@@ -55,6 +63,7 @@ function ListaGestiones() {
             gestion={gestion}
             onEditar={abrirModalEditar}
             onPagos={abrirModalPagos}
+            onEliminar={handleEliminarGestion}
           />
         ))}
       </main>

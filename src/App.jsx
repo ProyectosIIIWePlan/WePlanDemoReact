@@ -1,16 +1,9 @@
-import { useState } from 'react'
-import './App.css'
-
-import Page from './components/Nombre_Pagina_Aqui.jsx'
+// src/App.jsx
+import "./App.css";
+import ListaGestiones from "./components/Victor/ListaGestiones";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <Page />
-    </>
-  )
+  return <ListaGestiones />;
 }
 
-export default App
+export default App;
