@@ -1,5 +1,37 @@
+/* src/App.css */
+
 #root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Tema claro global */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #00382f;
+  background-color: #e8f8f6;
+  color-scheme: light;
+
+  /* Variables de color por si las necesitáis en más sitios */
+  --c-norm-1: #001f1a;
+  --c-norm-2: #00382f;
+  --c-norm-3: #004e44;
+  --c-norm-4: #007d6d;
+  --c-norm-5: #00a48e;
+  --c-norm-6: #34bcaa;
+  --c-norm-7: #56d3c3;
+  --c-norm-8: #79ddd0;
+  --c-norm-9: #9df2e6;
+  --c-norm-10: #b5fef4;
+  --c-norm-11: #e9fefb;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e8f8f6;
 }

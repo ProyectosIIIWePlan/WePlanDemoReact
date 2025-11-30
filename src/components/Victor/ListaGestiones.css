@@ -1,0 +1,547 @@
+/* ============================================================
+   BASE
+============================================================ */
+
+.lista-gestiones-page {
+  min-height: 100vh;
+  background-color: #f3fbfa;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, sans-serif;
+  color: #00382f;
+}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+
+.navbar-gestiones {
+  background-color: #bff7ef;
+  border-bottom: 1px solid #87ddd3;
+  padding: 0.85rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-gestiones-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-back {
+  background: none;
+  border: none;
+  font-size: 1.45rem;
+  cursor: pointer;
+  color: #00564c;
+}
+
+.navbar-titulo {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.navbar-boton-invitar {
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #00a48e;
+  color: white;
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.navbar-boton-invitar:hover {
+  background-color: #008c79;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+============================================================ */
+
+.lista-gestiones-contenido {
+  max-width: 650px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mensaje-sin-gestiones {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #005f54;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   TARJETAS
+============================================================ */
+
+.gestion-card {
+  width: 100%;
+  background-color: white;
+  border-radius: 14px;
+  padding: 1.3rem 1.4rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d7eee9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: 0.2s;
+}
+
+.gestion-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.gestion-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gestion-titulo {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #00382f;
+}
+
+/* Estados de tarjeta */
+.gestion-card-pendiente {
+  border-left: 5px solid #ff6b6b;
+  background-color: #ffecec;
+}
+
+.gestion-card-parcial {
+  border-left: 5px solid #ffb347;
+  background-color: #fff3df;
+}
+
+.gestion-card-completa {
+  border-left: 5px solid #00b894;
+  background-color: #e8fff7;
+}
+
+/* Badges tipo */
+
+.gestion-tipo {
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-viaje {
+  background-color: #c6f4ff;
+  color: #0077a2;
+}
+
+.badge-bote {
+  background-color: #ffe7c2;
+  color: #a86000;
+}
+
+/* Detalles */
+
+.gestion-detalles-viaje,
+.gestion-detalles-bote {
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detalle-label {
+  font-weight: 600;
+  color: #00564c;
+}
+
+.detalle-cantidad {
+  font-weight: 700;
+  color: #004e44;
+}
+
+.detalle-extra {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #777;
+}
+
+/* Botones dentro de tarjeta */
+
+.gestion-botones {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.gestion-boton-acceder,
+.gestion-boton-secundario {
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.gestion-boton-acceder {
+  background-color: #00a48e;
+  color: white;
+}
+
+.gestion-boton-acceder:hover {
+  background-color: #008c79;
+}
+
+.gestion-boton-secundario {
+  background-color: #e4f6f3;
+  color: #005f54;
+}
+
+.gestion-boton-secundario:hover {
+  background-color: #d0ece7;
+}
+
+/* ============================================================
+   BOTÓN FLOTANTE +
+============================================================ */
+
+.boton-flotante-aniadir {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #00a48e;
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  z-index: 999;
+}
+
+.boton-flotante-aniadir:hover {
+  transform: scale(1.12);
+  background-color: #008c79;
+}
+
+/* ============================================================
+   MODALES
+============================================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+
+  align-items: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  overflow-y: auto;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+.modal-contenido {
+  background: white;
+  width: 95%;
+  max-width: 430px;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  animation: modalFade 0.2s ease-out;
+
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-contenido::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-contenido::-webkit-scrollbar-thumb {
+  background: #00a48e66;
+  border-radius: 10px;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-contenido h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Selector tipo viaje/bote */
+
+.modal-tipo-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.modal-tipo-selector button {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #00a48e;
+  background: white;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #00a48e;
+  transition: 0.2s;
+}
+
+.modal-tipo-selector .tipo-activo {
+  background-color: #00a48e;
+  color: white;
+}
+
+/* ============================================================
+   FORMULARIO MODAL
+============================================================ */
+
+.modal-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.modal-formulario label {
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 550;
+  color: #004e44;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-formulario input {
+  margin-top: 0.4rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #bcd2d0;
+  background-color: #fff;
+  font-size: 0.95rem;
+  color: #00382f;
+}
+
+.modal-formulario input::placeholder {
+  color: #7a8c89;
+}
+
+.texto-division {
+  font-size: 0.85rem;
+  text-align: left;
+  color: #587470;
+}
+
+/* ============================================================
+   BOTONES MODAL
+============================================================ */
+
+.modal-boton-opcion {
+  border: none;
+  background-color: #00a48e;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 550;
+  transition: 0.2s;
+  margin-top: 0.3rem;
+}
+
+.modal-boton-opcion:hover {
+  background-color: #008c79;
+}
+
+.modal-boton-cerrar {
+  border: none;
+  background: none;
+  color: #00382f;
+  margin-top: 0.65rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   MODAL PAGOS: LISTA PARTICIPANTES
+============================================================ */
+
+.lista-participantes {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0.5rem;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.participante-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  padding: 0.4rem 0.2rem;
+}
+
+.participante-nombre {
+  font-weight: 550;
+  margin: 0;
+}
+
+.participante-detalle {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+}
+
+.participante-boton {
+  border: none;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.participante-boton.pendiente {
+  background-color: #ffe0dd;
+  color: #a15300;
+}
+
+.participante-boton.pendiente:hover {
+  background-color: #ffcbbf;
+}
+
+.participante-boton.pagado {
+  background-color: #00b894;
+  color: white;
+}
+
+.participante-boton.pagado:hover {
+  background-color: #009470;
+}
+
+.resumen-pagos {
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ============================================================
+   SUBSECCIONES HOTEL / TRANSPORTE
+============================================================ */
+
+.subseccion-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.4rem 0 0.2rem;
+  color: #00564c;
+}
+
+.grupo-campo-multiple {
+  border: 1px solid #dde7e5;
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  margin-bottom: 0.5rem;
+  background-color: #f7fbfa;
+}
+
+.fila-fechas {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+/* Botones pequeños (añadir / quitar) */
+
+.boton-mini {
+  margin-top: 0.4rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background-color: #ffe0dd;
+  color: #a15300;
+  transition: 0.2s;
+}
+
+.boton-mini:hover {
+  background-color: #ffcbbf;
+}
+
+.boton-mini-secundario {
+  background-color: #e4f6f3;
+  color: #005f54;
+}
+
+.boton-mini-secundario:hover {
+  background-color: #d0ece7;
+}
+
+/* Botón eliminar */
+.gestion-boton-eliminar {
+  background-color: #ffe0dd;
+  color: #a15300;
+  font-weight: 600;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.gestion-boton-eliminar:hover {
+  background-color: #ffcbbf;
+}
+
+
+/* ============================================================
+   ANIMACIÓN TARJETAS
+============================================================ */
+
+.card-anim {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeCard 0.35s ease forwards;
+}
+
+@keyframes fadeCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -3,11 +3,11 @@ import { useState } from 'react'
 import './App.css'
 
 import Gestion from './components/Mario/Gestion.jsx'
-import Viaje from './components/Mario/Viaje.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  // Victor <ListaGestiones />
   return (
     <>
         <Routes>
@@ -17,4 +17,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
