@@ -1,0 +1,125 @@
+#m-viaje {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    display: none; /* flex */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.m-tripTicketsSection {
+    width: 100%;
+    position: relative;
+}
+
+/* TRIP CONTENT */
+#m-tripContent{
+    display: block;
+    width: 100%;
+}
+
+#m-viaje .title{
+    margin: 2vh 0 0;
+    width: 100%;
+
+    font-size: 2.5vh;
+    font-weight: bold;
+    text-align: left;
+    color: var(--c-norm-4);
+}
+
+.title.underline{
+    border-bottom: 0.2vh solid var(--c-norm-4);
+}
+
+/* Timeline */
+#m-tripTimeline{
+    display:flex;
+    position: relative;
+    height: 24vh;
+
+    margin: 1vh 0 0 0;
+    justify-content: flex-end;
+    align-items: start;
+    flex-direction: column;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.m-tripItinerarySection {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.m-tripItineraryCard {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--c-norm-4);
+    border-radius: 10px;
+    margin: 3vh 0 0 0;
+    padding: 15px 0;
+
+    width: 100%;
+    height: 20vh;
+}
+
+.m-tripLockContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.m-tripLockIcon {
+    position: absolute;
+    top: calc(8vh - 20px);
+    left: calc(50% - 20px);
+
+    width: 40px;
+    height: 40px;
+}
+
+.m-tripLockText {
+    position: absolute;
+    font-size: 1.2rem;
+    text-align: center;
+    text-wrap: nowrap;
+    font-weight: bold;
+
+    width: 100%;
+    height: 30px;
+    top: calc(12vh - 15px);
+    color: var(--c-norm-10);
+}
+
+@media(max-height: 900px) {
+    .m-tripLockIcon {
+        position: absolute;
+        top: calc(10vh - 20px);
+        left: calc(50% - 20px);
+
+        width: 40px;
+        height: 40px;
+    }
+    .m-tripCrownIcon {
+        display: none;
+    }
+
+    .m-tripLockText {
+        display: none;
+    }
+}

@@ -1,0 +1,110 @@
+#ticketsDisplay{
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 5vh;
+}
+#ticketsDisplay > .ticket{
+    position: relative;
+    width: 30vh;
+    height: 15vh;
+    padding: 1vh 2vh 2vh;
+    background-color: var(--c-norm-5);
+    border-radius: 2vh;
+    text-align: left;
+}
+#ticketsDisplay > .ticket:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: calc(-2.5vh - 0.75vh);
+    width: 1.5vh;
+    height: 1.4vh;
+
+    background-color: var(--c-norm-5);
+    border-radius: 50%;
+}
+#ticketsDisplay > .ticket:first-child{
+    margin-left: 4vh;
+}
+#ticketsDisplay > .ticket:last-child:before{
+    opacity: 0;
+}
+
+#ticketsDisplay > .ticket > .day{
+    position: absolute;
+    top: -4vh;
+    left: 0;
+    margin: 0;
+
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: var(--c-norm-5);
+    word-spacing: 0.8vh;
+}
+#ticketsDisplay > .ticket > .title{
+    margin: 0;
+    height: 3vh;
+    padding: 0;
+    font-size: 3vh;
+    font-weight: bold;
+    color: var(--c-norm-9);
+}
+#ticketsDisplay > .ticket > .description{
+    margin: 0.5vh 0 0 0.1vh;
+    font-size: 1.2vh;
+    font-weight: lighter;
+    color: var(--c-norm-9);
+}
+#ticketsDisplay > .ticket > .typeLogo{
+    position: absolute;
+    margin: -.5vh 0 0;
+    font-size: 0;
+
+    /* valores por defecto (en caso de error) */
+    top: 2vh;
+    right: 2vh;
+    width: 3vh;
+    height: 3vh;
+}
+#ticketsDisplay > .ticket > .typeLogo.plane{
+    top: 1.5vh;
+    right: 2vh;
+    width: 5vh;
+    height: 5vh;
+}
+#ticketsDisplay > .ticket > .typeLogo.bus{
+    top: 1.8vh;
+    right: 2vh;
+    width: 4.5vh;
+    height: 4.5vh;
+}
+#ticketsDisplay > .ticket > .typeLogo.bed{
+    top: 2.2vh;
+    right: 2.5vh;
+    width: 3vh;
+    height: 3vh;
+}
+#ticketsDisplay > .ticket > .company{
+    position: absolute;
+    bottom: 1vh;
+    left: 2vh;
+
+    text-transform: uppercase;
+    font-size: 2vh;
+    font-weight: bold;
+    color: var(--c-norm-9);
+    margin: 0;
+}
+#ticketsDisplay > .ticket > .time{
+    position: absolute;
+    bottom: 1vh;
+    right: 1vh;
+
+    font-size: 2vh;
+    font-weight: bold;
+    letter-spacing: 0.8vh;
+    color: var(--c-norm-9);
+    margin: 0;
+}
