@@ -101,6 +101,7 @@ function GestionGrupo() {
         <input
           type="text"
           value={nuevoMiembro}
+          onKeyDown={(k) => {k.key === 'Enter' ? agregarMiembro() : null}}
           onChange={(e) => setNuevoMiembro(e.target.value)}
           placeholder="Añadir miembro"
         />

@@ -78,6 +78,9 @@
   font-size: 0.95rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   outline: none;
+
+    color: var(--c-norm-4);
+    background-color: var(--c-norm-11);
 }
 
 .agregar-miembro input::placeholder {
