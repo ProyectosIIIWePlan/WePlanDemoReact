@@ -1,16 +1,18 @@
 // src/components/Victor/GestionCard.jsx
 import "./ListaGestiones.css";
+import {useNavigate} from "react-router-dom";
 
-function GestionCard({ gestion, onEditar, onPagos, onEliminar }) {
+function GestionCard({ gestion, onEditar, onPagos, onEliminar, groupId }) {
   // Extraemos datos principales
+    const navigate = useNavigate();
   const {
     id,
     tipo = "viaje",
     nombre,
     hoteles = [],
     transportes = [],
-    participantes = [],
-    participantesTotales
+    /*participantes = [],
+    participantesTotales*/
   } = gestion;
 
   // Total según tipo
@@ -19,6 +21,7 @@ function GestionCard({ gestion, onEditar, onPagos, onEliminar }) {
       ? Number(gestion.costeTotal || 0)
       : Number(gestion.cantidadTotal || 0);
 
+/*
   // Pagado por participantes
   const pagado = participantes.reduce(
     (acc, p) => acc + (p.haPagado ? Number(p.debePagar) : 0),
@@ -28,13 +31,14 @@ function GestionCard({ gestion, onEditar, onPagos, onEliminar }) {
   const restante = Math.max(total - pagado, 0);
   const numParticipantes = participantesTotales ?? participantes.length;
 
+   */
   // Estado visual
-  let estado = "pendiente";
-  if (total > 0) {
+  let estado = "completa"; // pendiente, parcial, completa
+  /*if (total > 0) {
     if (pagado >= total) estado = "completa";
     else if (pagado > 0) estado = "parcial";
   }
-
+*/
   return (
     <div className={`gestion-card gestion-card-${estado} card-anim`}>
 
@@ -54,9 +58,9 @@ function GestionCard({ gestion, onEditar, onPagos, onEliminar }) {
       {/* INFORMACIÓN PRINCIPAL */}
       <div className="gestion-detalles-viaje">
         <span>
-          <span className="detalle-label">Total:</span> {total.toFixed(2)} €
+          <span className="detalle-label">Dinero total:</span> {total.toFixed(2)} €
         </span>
-
+          {/*
         <span>
           <span className="detalle-label">Pagado:</span> {pagado.toFixed(2)} €
         </span>
@@ -66,13 +70,13 @@ function GestionCard({ gestion, onEditar, onPagos, onEliminar }) {
             <span className="detalle-label">Restante:</span> {restante.toFixed(2)} €
           </span>
         )}
-
         <span className="detalle-extra">
           {numParticipantes} participantes
         </span>
+        */}
       </div>
 
-      {/* SECCIÓN DE HOTELES */}
+      {/* SECCIÓN DE HOTELES
       {tipo === "viaje" && hoteles.length > 0 && (
         <div className="gestion-detalles-viaje">
           <span className="detalle-label">Hoteles:</span>
@@ -84,8 +88,8 @@ function GestionCard({ gestion, onEditar, onPagos, onEliminar }) {
           ))}
         </div>
       )}
-
-      {/* SECCIÓN DE TRANSPORTES */}
+        */}
+      {/* SECCIÓN DE TRANSPORTES
       {tipo === "viaje" && transportes.length > 0 && (
         <div className="gestion-detalles-viaje">
           <span className="detalle-label">Transportes:</span>
@@ -97,22 +101,24 @@ function GestionCard({ gestion, onEditar, onPagos, onEliminar }) {
           ))}
         </div>
       )}
-
+         */}
       {/* BOTONES */}
       <div className="gestion-botones">
-        <button
-          className="gestion-boton-acceder"
-          onClick={() => onPagos(gestion)}
-        >
-          Pagos
-        </button>
 
-        <button
+          <button
+                  className="gestion-boton-acceder"
+                  onClick={() => navigate(`/gestion/${groupId}/${id}`)}
+          >
+              Ver
+          </button>
+
+          {/*<button disabled={true}
+                style={{ cursor: 'not-allowed', opacity: 0.6, backgroundColor: "gray", color: "black" }}
           className="gestion-boton-secundario"
           onClick={() => onEditar(gestion)}
         >
           Editar
-        </button>
+        </button>*/}
 
         {onEliminar && (
           <button

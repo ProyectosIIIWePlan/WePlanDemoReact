@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './GrupoManager.css';
+import Navbar from "/src/components/Mario/Navbar.jsx";
 import GrupoCreacion from './GrupoCreacion.jsx';
 
 function CrearGrupo() {
@@ -20,13 +21,14 @@ function CrearGrupo() {
 
   return (
     <div className="gm-page">
+      <Navbar admin={null} groupId={null} gestName={"WEPLAN"} arrow={false} />
       <h1 className="gm-header">Mis grupos</h1>
 
       <div className="gm-groups">
         {grupos.map((grupo, index) => (
           <div key={grupo.id} className="gm-card">
             <div className="gm-card-main">
-              <div className="gm-card-name">{grupo.nombre}</div>
+              <div className="gm-card-name" onClick={() => navigate(`/gestiones/${grupo.id}`)}>{grupo.nombre}</div>
               <button
                 className="gm-btn-ver"
                 onClick={() => handleGroupClick(grupo.id)}

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./ListaGestiones.css";
 
-function ModalAñadirGestion({ onClose, onCrearGestion }) {
+function ModalAñadirGestion({ onClose, onCrearGestion, groupId }) {
   const [tipo, setTipo] = useState("viaje");
 
   const [form, setForm] = useState({
@@ -102,27 +102,27 @@ function ModalAñadirGestion({ onClose, onCrearGestion }) {
         : Number(form.cantidadTotal || 0);
 
     // Participantes con división igualitaria
-    const participantes =
-      participantesTotales > 0 && coste > 0
-        ? Array.from({ length: participantesTotales }, (_, i) => {
-            const debe = Number(
-              (coste / participantesTotales).toFixed(2)
-            );
-            return {
-              id: i + 1,
-              nombre: `Persona ${i + 1}`,
-              debePagar: debe,
-              haPagado: false,
-            };
-          })
-        : [];
+      /*const participantes =
+        participantesTotales > 0 && coste > 0
+          ? Array.from({ length: participantesTotales }, (_, i) => {
+              const debe = Number(
+                (coste / participantesTotales).toFixed(2)
+              );
+              return {
+                id: i + 1,
+                nombre: `Persona ${i + 1}`,
+                debePagar: debe,
+                haPagado: false,
+              };
+            })
+          : [];*/
+    const participantes = JSON.parse(localStorage.getItem(`miembros-${groupId}`)) || [];
+
 
     const base = {
       id: Date.now(),
       tipo,
       nombre: form.nombre,
-      participantesTotales,
-      participantesPagados: 0,
       participantes,
     };
 
@@ -358,18 +358,6 @@ function ModalAñadirGestion({ onClose, onCrearGestion }) {
               />
             </label>
           )}
-
-          <label>
-            Número de participantes:
-            <input
-              type="number"
-              name="participantesTotales"
-              min="1"
-              value={form.participantesTotales}
-              onChange={handleBasicChange}
-              placeholder="Ej. 4"
-            />
-          </label>
 
           <p className="texto-division">
             La cantidad se dividirá a partes iguales entre los
