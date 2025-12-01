@@ -208,6 +208,10 @@
   font-size: 1.1rem;
   color: var(--c-norm-2);
   font-weight: 700;
+
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .gm-content {
   padding-top: 12px; /* separa del navbar */

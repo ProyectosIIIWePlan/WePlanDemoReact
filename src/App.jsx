@@ -4,7 +4,7 @@ import './App.css'
 
 import CrearGrupo from './components/Jaime/GrupoManager.jsx';
 import GestionGrupo from './components/Jaime/GestionMiembros.jsx';
-import Gestion from './components/Mario/Gestion.jsx'
+import LoadGestion from './components/Mario/LoadGestion.jsx'
 import ListaGestiones from "./components/Victor/ListaGestiones.jsx";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
             <Route path="/" element={<CrearGrupo />} />
             <Route path="/grupo/:grupoId" element={<GestionGrupo />} />
-            <Route path="/gestion" element={<Gestion payTotal={1000} nPersonas={8} admin={false} isTrip={true} />} />
+            <Route path="/gestion/:groupId/:gestId" element={<LoadGestion payTotal={1000} nPersonas={8} admin={false} isTrip={true} />} />
             <Route path="/gestiones/:groupId" element={<ListaGestiones />} />
             
         </Routes>

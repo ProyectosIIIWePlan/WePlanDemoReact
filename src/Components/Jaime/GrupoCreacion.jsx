@@ -16,7 +16,10 @@ function GrupoCreacion({ onGroupsUpdated }) {
   };
 
   const handleCreateGroup = () => {
-    if (grupoNombre.trim() === '') return;
+    if (grupoNombre.trim() === ''){
+        alert("El nombre del grupo no puede estar vacío.");
+        return;
+    }
 
     const grupos = JSON.parse(localStorage.getItem('grupos')) || [];
     const newGrupo = { id: Date.now(), nombre: grupoNombre.trim() };
@@ -41,14 +44,16 @@ function GrupoCreacion({ onGroupsUpdated }) {
     <div className="gm-create-panel">
       <h3 className="gm-create-title">Crear nuevo grupo</h3>
 
-      {/* Nombre del viaje */}
+      {/* Nombre del grupo */}
       <div className="gm-create-row">
         <input
           type="text"
           className="gm-input"
           value={grupoNombre}
           onChange={(e) => setGrupoNombre(e.target.value)}
-          placeholder="Nombre del viaje"
+          placeholder="Nombre del grupo"
+          //make it pop if null or empty when trying to create
+            required={true}
         />
       </div>
 
@@ -75,6 +80,7 @@ function GrupoCreacion({ onGroupsUpdated }) {
           type="text"
           className="gm-input"
           value={nuevoMiembro}
+          onKeyDown={(k) => {k.key === 'Enter' ? agregarMiembro() : null}}
           onChange={(e) => setNuevoMiembro(e.target.value)}
           placeholder="Añadir integrante"
         />
@@ -85,7 +91,7 @@ function GrupoCreacion({ onGroupsUpdated }) {
 
       {/* Botón final para crear el grupo */}
       <button className="gm-create-btn" onClick={handleCreateGroup}>
-        Crear viaje
+        Crear grupo
       </button>
     </div>
   );

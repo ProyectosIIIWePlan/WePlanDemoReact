@@ -2,7 +2,7 @@ import React from 'react'
 import Tickets from './Tickets.jsx'
 import './Viaje.css'
 
-const Viaje= React.forwardRef(({  }, ref) => {
+const Viaje= React.forwardRef(({ data }, ref) => {
 
 
     // bus bed plane
@@ -42,7 +42,7 @@ const Viaje= React.forwardRef(({  }, ref) => {
                 <div id="m-tripContent">
                     <div className="title underline">Tickets</div>
                     <div id="m-tripTimeline">
-                        <Tickets tickets={tickets} />
+                        <Tickets tickets={data} />
                     </div>
                 </div>
             </section>

@@ -1,7 +1,7 @@
 import './ProgressCircle.css'
 import { useRef } from 'react'
 
-export default function ProgressCircle({ percent, debt }) {
+export default function ProgressCircle({ percent }) {
     const clamped = Math.max(0, Math.min(100, percent))
     const offsetExpr = `calc(2 * 3.1415 * 40% * ${(100 - clamped) / 100})`
     const circleBg = useRef(null)

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Navbar from '/src/components/Mario/Navbar.jsx'
 import './GestionMiembros.css'
 
 function GestionGrupo() {
@@ -29,6 +30,14 @@ function GestionGrupo() {
 
     // Eliminar los miembros del grupo también
     localStorage.removeItem(`miembros-${grupoId}`);
+      localStorage.removeItem(`gestiones_${grupoId}`);
+      const prefix = `state_${grupoId}_`;
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && k.startsWith(prefix)) keysToRemove.push(k);
+      }
+      keysToRemove.forEach(k => localStorage.removeItem(k));
     
     navigate('/'); // Volver a la página principal de crear grupos
   };
@@ -59,16 +68,19 @@ function GestionGrupo() {
   return (
   <div className="gestion-grupo">
 
-    {/* NAVBAR SUPERIOR */}
+    {/* NAVBAR SUPERIOR
     <div className="gm-navbar">
       <button className="gm-back-btn" onClick={() => navigate('/')}>
-        ← {/* /src/assets/LeftArrow.png */}
+        ←
       </button>
 
       <span className="gm-navbar-title">
-        Gestión del grupo: {grupo.nombre}
+        {grupo.nombre}
       </span>
     </div>
+    */}
+      <Navbar gestName={"Configurar " + grupo.nombre} groupId={null} admin={null}></Navbar>
+
 
     {/* CONTENIDO PRINCIPAL */}
     <div className="gm-content">

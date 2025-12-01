@@ -197,14 +197,14 @@ function ModalEditarGestion({ gestion, onClose, onGuardar }) {
 
           {esViaje ? (
             <>
-              <p className="subseccion-titulo">Hoteles</p>
+              <p className="subseccion-titulo">Alojamientos</p>
               {form.hoteles.map((hotel, index) => (
                 <div
                   className="grupo-campo-multiple"
                   key={hotel.id ?? index}
                 >
                   <label>
-                    Nombre del hotel:
+                    Nombre del alojamiento:
                     <input
                       type="text"
                       value={hotel.nombre}
@@ -256,7 +256,7 @@ function ModalEditarGestion({ gestion, onClose, onGuardar }) {
                       className="boton-mini"
                       onClick={() => eliminarHotel(index)}
                     >
-                      Quitar hotel
+                      Quitar estancia
                     </button>
                   )}
                 </div>
@@ -267,10 +267,10 @@ function ModalEditarGestion({ gestion, onClose, onGuardar }) {
                 className="boton-mini boton-mini-secundario"
                 onClick={añadirHotel}
               >
-                + Añadir otro hotel
+                + Añadir estancia
               </button>
 
-              <p className="subseccion-titulo">Transportes</p>
+              <p className="subseccion-titulo">Billetes</p>
               {form.transportes.map((trans, index) => (
                 <div
                   className="grupo-campo-multiple"
@@ -312,7 +312,7 @@ function ModalEditarGestion({ gestion, onClose, onGuardar }) {
                       className="boton-mini"
                       onClick={() => eliminarTransporte(index)}
                     >
-                      Quitar transporte
+                      Quitar billete
                     </button>
                   )}
                 </div>
@@ -323,7 +323,7 @@ function ModalEditarGestion({ gestion, onClose, onGuardar }) {
                 className="boton-mini boton-mini-secundario"
                 onClick={añadirTransporte}
               >
-                + Añadir otro transporte
+                + Añadir billete
               </button>
 
               <label>
@@ -347,17 +347,6 @@ function ModalEditarGestion({ gestion, onClose, onGuardar }) {
               />
             </label>
           )}
-
-          <label>
-            Número de participantes:
-            <input
-              type="number"
-              name="participantesTotales"
-              min="1"
-              value={form.participantesTotales}
-              onChange={handleBasicChange}
-            />
-          </label>
 
           <p className="texto-division">
             Al guardar se recalcula la cantidad por persona de forma

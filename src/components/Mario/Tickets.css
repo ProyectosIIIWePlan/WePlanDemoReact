@@ -34,22 +34,31 @@
 
 #ticketsDisplay > .ticket > .day{
     position: absolute;
-    top: -4vh;
-    left: 0;
+    /*top: -4vh;
+    left: 0;*/
+    bottom: .8vh;
+    right: 2.4vh;
+
     margin: 0;
 
     font-size: 2.5vh;
     font-weight: bold;
-    color: var(--c-norm-5);
+    /*color: var(--c-norm-5);*/
+    color: var(--c-norm-9);
     word-spacing: 0.8vh;
 }
 #ticketsDisplay > .ticket > .title{
     margin: 0;
-    height: 3vh;
+    height: 5vh;
     padding: 0;
     font-size: 3vh;
     font-weight: bold;
     color: var(--c-norm-9);
+
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
 }
 #ticketsDisplay > .ticket > .description{
     margin: 0.5vh 0 0 0.1vh;
@@ -63,6 +72,12 @@
     font-size: 0;
 
     /* valores por defecto (en caso de error) */
+    top: 2vh;
+    right: 2vh;
+    width: 3vh;
+    height: 3vh;
+}
+#ticketsDisplay > .ticket > .typeLogo.ticket{
     top: 2vh;
     right: 2vh;
     width: 3vh;

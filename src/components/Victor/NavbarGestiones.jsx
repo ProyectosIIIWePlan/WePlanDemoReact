@@ -1,9 +1,12 @@
 // src/components/Victor/NavbarGestiones.jsx
 
-function NavbarGestiones() {
+import {useNavigate} from "react-router-dom";
+
+function NavbarGestiones({ groupName }) {
   const handleInvitar = () => {
     alert("Aquí se mostraría la pantalla para invitar miembros al grupo.");
   };
+  const navigate = useNavigate();
 
   return (
     <header className="navbar-gestiones">
@@ -12,14 +15,13 @@ function NavbarGestiones() {
           className="navbar-back"
           type="button"
           onClick={() => {
-            console.log("Volver atrás");
+            navigate('/')
           }}
         >
           ←
         </button>
         <h1 className="navbar-titulo">
-          Titulo de viaje
-          {/* TODO: cambiar este título cuando se integre con la pantalla de grupos */}
+          {groupName}
         </h1>
       </div>
 

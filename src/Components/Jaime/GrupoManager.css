@@ -44,6 +44,9 @@
   font-size: 0.95rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   outline: none;
+
+    color: var(--c-norm-4);
+    background-color: var(--c-norm-11);
 }
 
 .gm-input::placeholder {
@@ -99,6 +102,8 @@
     font-weight: 700;
     margin-top: -2px;
     color: var(--c-norm-4);
+
+    cursor: pointer;
 }
 
 .gm-card-count {
@@ -156,6 +161,7 @@
   }
 
   .gm-header {
+      margin-top: 70px;
     font-size: 1.2rem;
     margin-bottom: 16px;
   }
@@ -167,6 +173,7 @@
 
   .gm-card-name {
     font-size: 1rem;
+      cursor: pointer;
   }
 
   .gm-card-sub {
