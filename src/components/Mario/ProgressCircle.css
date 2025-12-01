@@ -30,7 +30,6 @@
 
 #progress-circle .bg {
     stroke: var(--c-norm-4);
-    stroke-width: 4.9vh;
 }
 
 #progress-circle .progress {

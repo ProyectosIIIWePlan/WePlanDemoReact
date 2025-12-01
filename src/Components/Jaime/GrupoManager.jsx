@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './GrupoManager.css';
-import GrupoCreacion from './GrupoCreacion';
+import GrupoCreacion from './GrupoCreacion.jsx';
 
 function CrearGrupo() {
   const [grupos, setGrupos] = useState(
@@ -22,22 +22,18 @@ function CrearGrupo() {
     <div className="gm-page">
       <h1 className="gm-header">Mis grupos</h1>
 
-      <h2 className="gm-subtitle">Viajes creados</h2>
-
       <div className="gm-groups">
         {grupos.map((grupo, index) => (
           <div key={grupo.id} className="gm-card">
             <div className="gm-card-main">
               <div className="gm-card-name">{grupo.nombre}</div>
-              <div className="gm-card-sub">Toca para gestionar</div>
               <button
                 className="gm-btn-ver"
                 onClick={() => handleGroupClick(grupo.id)}
               >
-                Ver
+                Editar
               </button>
             </div>
-            <div className="gm-card-count">{index + 1}</div>
           </div>
         ))}
 

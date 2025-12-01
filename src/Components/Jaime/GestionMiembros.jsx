@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './GestionMiembros.css'
+
 function GestionGrupo() {
   const { grupoId } = useParams();
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ function GestionGrupo() {
     {/* NAVBAR SUPERIOR */}
     <div className="gm-navbar">
       <button className="gm-back-btn" onClick={() => navigate('/')}>
-        ← {/* /mario/LeftArrow.png */}
+        ← {/* /src/assets/LeftArrow.png */}
       </button>
 
       <span className="gm-navbar-title">

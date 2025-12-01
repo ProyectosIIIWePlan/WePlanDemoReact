@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import "./Navbar.css"
-import BackArrow from '/Mario/LeftArrow.png'
+import BackArrow from '/src/assets/LeftArrow.png'
 
 function Navbar({ admin }) {
-    const [count, setCount] = useState(50)
     const navbarContainer = useRef(null);
     const permText = useRef(null);
     const permBg = useRef(null);

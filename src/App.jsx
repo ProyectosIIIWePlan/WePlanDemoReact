@@ -2,13 +2,12 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 
-import CrearGrupo from './Components/GrupoManager';
-import GestionGrupo from './Components/GestionMiembros';
+import CrearGrupo from './components/Jaime/GrupoManager.jsx';
+import GestionGrupo from './components/Jaime/GestionMiembros.jsx';
 import Gestion from './components/Mario/Gestion.jsx'
+import ListaGestiones from "./components/Victor/ListaGestiones.jsx";
 
 function App() {
-
-  // Victor <ListaGestiones />
   return (
     <>
         <Routes>
@@ -16,6 +15,7 @@ function App() {
             <Route path="/" element={<CrearGrupo />} />
             <Route path="/grupo/:grupoId" element={<GestionGrupo />} />
             <Route path="/gestion" element={<Gestion payTotal={1000} nPersonas={8} admin={false} isTrip={true} />} />
+            <Route path="/gestiones/:groupId" element={<ListaGestiones />} />
             
         </Routes>
     </>

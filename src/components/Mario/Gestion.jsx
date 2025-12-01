@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import Navbar from './NavBar.jsx'
 import PayPool from './PayPool.jsx'
 import Viaje from "./Viaje.jsx";

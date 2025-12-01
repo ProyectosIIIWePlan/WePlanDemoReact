@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import Tickets from './Tickets.jsx'
 import './Viaje.css'
 
@@ -13,7 +13,7 @@ const Viaje= React.forwardRef(({  }, ref) => {
             route: 'AVI - MAD',
             description: 'Asiento 12A, Clase Turista',
             logoType: 'bus',
-            logoSrc: "/Mario/LogoTypeBus.png",
+            logoSrc: "/src/assets/LogoTypeBus.png",
             operator: 'ALSA'
         },
         {
@@ -22,7 +22,7 @@ const Viaje= React.forwardRef(({  }, ref) => {
             route: 'MAD - VAL',
             description: 'Asiento 12A, Clase Turista',
             logoType: 'bus',
-            logoSrc: "/Mario/LogoTypeBus.png",
+            logoSrc: "/src/assets/LogoTypeBus.png",
             operator: 'ALSA'
         },
         {
@@ -31,7 +31,7 @@ const Viaje= React.forwardRef(({  }, ref) => {
             route: 'MAD - BAR',
             description: 'Asiento 12A, Clase Turista',
             logoType: 'bus',
-            logoSrc: "/Mario/LogoTypeBus.png",
+            logoSrc: "/src/assets/LogoTypeBus.png",
             operator: 'ALSA'
         }
     ];
@@ -50,7 +50,7 @@ const Viaje= React.forwardRef(({  }, ref) => {
                 <div className="title underline">Itinerario</div>
                 <div className="m-tripItineraryCard">
                     <div className="m-tripLockContainer">
-                        <img className="m-tripLockIcon" src="/Mario/PremiumLock.png" alt="lock" />
+                        <img className="m-tripLockIcon" src="/src/assets/PremiumLock.png" alt="lock" />
                         <span className="m-tripLockText">Unlock with premium</span>
                     </div>
                 </div>

@@ -18,7 +18,7 @@
 .gm-header {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--c-norm-2);
+  color: var(--c-norm-3);
   margin-bottom: 24px;
 }
 
@@ -71,25 +71,34 @@
 
 /* Tarjeta de grupo */
 .gm-card {
-  background-color: var(--c-norm-8);
+  background-color: var(--c-norm-7);
   border-radius: 18px;
   padding: 18px 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: calc(100% - 32px);
 }
 
 .gm-card-main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 6px;
+  width: 100%;
 }
 
 .gm-card-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--c-norm-3);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: -2px;
+    color: var(--c-norm-4);
 }
 
 .gm-card-count {
@@ -101,13 +110,12 @@
 /* Botón "Ver" dentro de la tarjeta */
 .gm-btn-ver {
   align-self: flex-start;
-  margin-top: 6px;
   padding: 6px 16px;
   border-radius: 999px;
   border: none;
   background-color: var(--c-norm-5);
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 1em;
   font-weight: 600;
   cursor: pointer;
 }
@@ -116,16 +124,16 @@
 .gm-empty {
   font-size: 0.9rem;
   color: var(--c-norm-4);
+    margin: -15px 0 0 0;
 }
 
 /* Botón grande "Nuevo grupo" abajo */
 .gm-btn-nuevo {
-  width: 260px;
-  max-width: 100%;
+  width: 100%;
   padding: 12px 16px;
   border-radius: 999px;
   border: none;
-  background-color: var(--c-norm-3);
+  background-color: var(--c-norm-4);
   color: #ffffff;
   font-weight: 600;
   font-size: 1rem;
