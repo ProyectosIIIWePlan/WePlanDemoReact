@@ -5,7 +5,7 @@ import GestionCard from "./GestionCard";
 import ModalAñadirGestion from "./ModalAñadirGestion";
 import ModalEditarGestion from "./ModalEditarGestion";
 import ModalPagosGestion from "./ModalPagosGestion";
-import Navbar from '/src/components/Mario/NavBar.jsx';
+import Navbar from '../Mario/NavBar.jsx';
 import "./ListaGestiones.css";
 
 function ListaGestiones() {
