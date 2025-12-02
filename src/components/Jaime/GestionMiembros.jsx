@@ -110,7 +110,7 @@ function GestionGrupo() {
 
       <div className="gg-botones">
         <button className="btn-danger" onClick={handleDeleteGroup}>
-          Eliminar viaje
+          Eliminar grupo
         </button>
       </div>
     </div>

@@ -82,7 +82,7 @@ const PayPool = React.forwardRef(({ payTotal, nPersonas, startState, onAllPaid, 
                     {payEnded ? "!Pago completado!" :
                         (payDone) ? (Math.round((100 - count) * nPersonas / 100) === 1 ?
                                 `Falta 1 persona por pagar` : `Faltan ${Math.round((100 - count) * nPersonas / 100)} personas por pagar`) :
-                            `!Tienes ${payCount}€ pendientes por pagar!`}
+                            `!Tienes ${(payCount).toFixed(2)}€ pendientes por pagar!`}
                 </h2>
                 <button ref={payButton} onClick={PayPart}>Pagar Ahora</button>
                 <button ref={payPart} onClick={PayPart}>Pagar Parte</button>
