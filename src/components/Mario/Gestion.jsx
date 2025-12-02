@@ -1,5 +1,5 @@
 import {useRef} from 'react'
-import Navbar from './NavBar.jsx'
+import Navbar from './Navbar.jsx'
 import PayPool from './PayPool.jsx'
 import Viaje from "./Viaje.jsx";
 import Bote from "./Bote.jsx";
