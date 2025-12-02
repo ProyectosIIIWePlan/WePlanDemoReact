@@ -65,7 +65,7 @@ function LoadGestion() {
 
     return(
       <>
-          <Gestion name={gestion.nombre ?? null} groupId={groupId} startState={state} payTotal={gestion.costeTotal ?? null} nPersonas={gestion.participantes?.length ?? 0} admin={true} isTrip={isTrip} saveState={saveState} data={data}/>
+          <Gestion name={gestion.nombre ?? null} groupId={groupId} startState={state} payTotal={gestion.costeTotal ?? (gestion.cantidadTotal ?? null)} nPersonas={gestion.participantes?.length ?? 0} admin={true} isTrip={isTrip} saveState={saveState} data={data}/>
       </>
     );
 }

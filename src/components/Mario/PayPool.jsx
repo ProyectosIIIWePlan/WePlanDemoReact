@@ -35,6 +35,7 @@ const PayPool = React.forwardRef(({ payTotal, nPersonas, startState, onAllPaid, 
     }, [startState])
 
     useEffect(() => {
+        console.log(payTotal, nPersonas);
         if (payTotal != null && nPersonas != null){
             setPayCount(payTotal / nPersonas)
             if (payTotal / nPersonas === 0 || nPersonas === 0){
