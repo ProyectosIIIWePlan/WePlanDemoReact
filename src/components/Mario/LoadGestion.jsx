@@ -24,13 +24,11 @@ function LoadGestion() {
         if (currentGest.tipo == 'viaje') {
             const hoteles = currentGest.hoteles;
             hoteles.forEach(hotel => {
-                hotel.logoType = 'bed';
-                hotel.logoSrc = '/src/assets/LogoTypeBed.png'
+                hotel.logo = 'bed';
             })
             const transportes = currentGest.transportes;
             transportes.forEach(trans => {
-                trans.logoType = 'ticket';
-                trans.logoSrc = '/src/assets/LogoTypeTicket.png'
+                trans.logo = 'ticket';
             })
             setData(hoteles.concat(transportes));
             console.log(hoteles.concat(transportes));

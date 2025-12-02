@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css"
-import BackArrow from '/src/assets/LeftArrow.png'
+import BackArrow from '../../assets/LeftArrow.png'
 
 function Navbar({ admin, gestName, groupId, arrow=true }) {
     const navigate = useNavigate();

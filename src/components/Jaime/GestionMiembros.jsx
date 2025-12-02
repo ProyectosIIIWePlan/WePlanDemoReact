@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Navbar from '/src/components/Mario/Navbar.jsx'
+import Navbar from '../Mario/Navbar.jsx'
 import './GestionMiembros.css'
 
 function GestionGrupo() {

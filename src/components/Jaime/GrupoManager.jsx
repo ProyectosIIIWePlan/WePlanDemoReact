@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './GrupoManager.css';
-import Navbar from "/src/components/Mario/Navbar.jsx";
+import Navbar from "../Mario/Navbar.jsx";
 import GrupoCreacion from './GrupoCreacion.jsx';
 
 function CrearGrupo() {
